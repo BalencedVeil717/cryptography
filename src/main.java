@@ -6,8 +6,13 @@ public class main {
         String cipheredMessage = cipher.cipher("he told me i could never teach a llama to drive", 10);
         System.out.println("Cipher Text : " + cipheredMessage);
 
-        String decipheredMessage = cipher.decipher(cipheredMessage, 10);
+        int offset = cipher.breakCipher(cipheredMessage);
+        System.out.println("Offset : " + offset);
+
+        String decipheredMessage = cipher.decipher(cipheredMessage, offset);
         System.out.println("Decipher Text : " + decipheredMessage);
+
+
 
     }
 }
