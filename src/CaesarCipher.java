@@ -6,7 +6,7 @@ public class CaesarCipher {
         for(char character : message.toCharArray()) {
             if(character != ' ') {
                 int originalPos = character - 'a';
-                int newPos = (originalPos + offset % 26);
+                int newPos = (originalPos + offset) % 26;
                 char newCharacter = (char) ('a' + newPos);
                 result.append(newCharacter);
             } else {
