@@ -1,10 +1,11 @@
+package substitution;
+
 import org.apache.commons.math3.stat.inference.ChiSquareTest;
 
-import javax.swing.*;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-public class CaesarCipher {
+public class Caesar {
     public String cipher(String message, int offset) {
         StringBuilder result = new StringBuilder();
         for (char character : message.toCharArray()) {
@@ -24,7 +25,7 @@ public class CaesarCipher {
         return cipher(message, 26 - (offset % 26));
     }
 
-    int breakCipher(String message) {
+    public int breakCipher(String message) {
         double[] englishLettersProbabilities = {0.073, 0.009, 0.030, 0.044, 0.130, 0.028, 0.016, 0.035, 0.074, 0.002, 0.003, 0.035, 0.025, 0.078, 0.074, 0.027, 0.003, 0.077, 0.063, 0.093, 0.027, 0.013, 0.016, 0.005, 0.019, 0.001};
 
         double[] expectedLettersFrequencies = Arrays.stream(englishLettersProbabilities)
