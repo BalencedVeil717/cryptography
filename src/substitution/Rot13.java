@@ -24,7 +24,7 @@ public class Rot13 {
 
         for (int i = 0; i < message.length(); i++) {
             if (message.charAt(i) != ' ') {
-                int num = (dict1.get(Character.toLowerCase(message.charAt(i))) + 13) % 26;
+                int num = (dict1.get(message.charAt(i)) + 13) % 26;
                 cipher.append(dict2.get(num));
             } else {
                 cipher.append(' ');
