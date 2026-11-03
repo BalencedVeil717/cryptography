@@ -1,5 +1,6 @@
 import substitution.Caesar;
 import substitution.Atbash;
+import substitution.Rot13;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -32,6 +33,7 @@ public class Cryptography {
 
                     System.out.println("1. Caesar Cipher");
                     System.out.println("2. Atbash Cipher");
+                    System.out.println("3. ROT13 Cipher");
 
                     System.out.println("0. Exit");
 
@@ -58,6 +60,7 @@ public class Cryptography {
                             System.out.println("Decipher Text : " + decipheredMessage);
 
                             break;
+
                         case 2:
                             System.out.println("\nA T B A S H    C I P H E R\n");
 
@@ -70,6 +73,20 @@ public class Cryptography {
                             System.out.println("Decipher Text : " + decipheredMessage);
 
                             break;
+
+                        case 3:
+                            System.out.println("\nR O T 1 3    C I P H E R");
+
+                            Rot13 rot13 = new Rot13();
+
+                            cipheredMessage = rot13.cipher(message);
+                            System.out.println("Cipher Text : " + cipheredMessage);
+
+                            decipheredMessage = rot13.decipher(cipheredMessage);
+                            System.out.println("Decipher Text : " + decipheredMessage);
+
+                            break;
+
                         default:
                             System.out.println("Invalid, try again.");
                     }
