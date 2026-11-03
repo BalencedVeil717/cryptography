@@ -19,12 +19,12 @@ public class rot13 {
         }
     }
 
-    public String cipher(String message, int shift) {
+    public String cipher(String message) {
         StringBuilder cipher = new StringBuilder();
 
         for (int i = 0; i < message.length(); i++) {
             if (message.charAt(i) != ' ') {
-                int num = (dict1.get(message.charAt(i)) + shift) % 26;
+                int num = (dict1.get(message.charAt(i))) % 26;
                 cipher.append(dict2.get(num));
             } else {
                 cipher.append(' ');
@@ -33,12 +33,12 @@ public class rot13 {
         return cipher.toString();
     }
 
-    public String decipher(String message, int shift) {
+    public String decipher(String message) {
         StringBuilder decipher = new StringBuilder();
 
         for (int i = 0; i < message.length(); i++) {
             if (message.charAt(i) != ' ') {
-                int num = (dict1.get(message.charAt(i)) - shift % 26) % 26;
+                int num = (dict1.get(message.charAt(i)) - 13 % 26) % 26;
                 decipher.append(dict2.get(num));
             } else {
                 decipher.append(' ');
