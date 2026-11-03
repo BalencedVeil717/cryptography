@@ -38,7 +38,7 @@ public class Atbash {
 
         for (char letter : message.toCharArray()) {
             if (letter != ' ') {
-                cipher.append(Character.toLowerCase(lookup_table.get(Character.toUpperCase(letter))));
+                cipher.append(lookup_table.get(Character.toLowerCase(letter)));
             } else {
                 cipher.append(' ');
             }
